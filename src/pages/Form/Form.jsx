@@ -67,7 +67,6 @@ function Form() {
       email: "",
       website: "",
       title: "",
-      middleName:'',
     },
     validate(values) {
       const errors = {};
