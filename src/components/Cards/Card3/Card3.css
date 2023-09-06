@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-general {
+  transform: translate(0px, -200px);
+  white-space: initial;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+}
+
+.second-card3 {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 80px;
+  width: 400px;
+  height: 230px;
+  background-size: cover;
+  margin: auto;
+  text-align: left;
+}
+
+.first-card3 {
+  width: 400px;
+  height: 230px;
+  background-size: cover;
+  margin: auto;
+}
+
+.card-logo {
+  width: 65px;
+}
+
+.companyName {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.slogan {
+  color: rgb(38, 153, 178);
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.75;
+}
+
+.lorem-text {
+  color: #fff;
+  font-size: 12px;
+  transform: translate(0px, 45px);
+  letter-spacing: 0.6px;
+}
+
+.name-div {
+  transform: translate(10px, -145px);
+}
+.name-class {
+  display: flex;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.card-holder-namee {
+  color: #2699b2;
+  margin-right: 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.card-holder-surnamee {
+  color: #2699b2;
+  opacity: 0.5;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.project-manager {
+  color: #fff;
+  text-align: left;
+  font-size: 11px;
+  transform: translate(20px, 3px);
+}
+/*  */
+/* .address-list {
+  display: flex;
+  position: absolute; 
+  top: 30%;
+  left: 50%;
+  font-size: 14px;
+ 
+} */
+/*  */
+
+.address-icon {
+  /* display: flex;*/
+  /* flex-direction: column; 
+  display: flex;
+  position: absolute; 
+  top: 30%;
+  left: 50%;
+  font-size: 14px;
+  color: #2699b2;  */
+  /* margin-left: 16px; 
+  margin-right: 10px;  */
+}
+
+/* .location-text {
+  color: #fff;
+  font-size: 11px !important;
+  margin-top: 3px;
+  margin-bottom: 13px;
+  text-align: left;
+} */
+
+.phone-text {
+  color: #fff;
+  font-size: 11px !important;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.envelope-text {
+  color: #fff;
+  font-size: 11px !important;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.arrow-text {
+  color: #fff;
+  font-size: 11px !important;
+  text-align: left;
+}
+
+.location-dot {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  transform: scale(var(--ggs, 1));
+  border-radius: 50%;
+  margin-bottom: 4px;
+  padding: 3px;
+  font-size: 10px !important;
+}
+
+.second-card-blog {
+  /* text-align: center !important; */
+}
+
+.company-name-line {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.icon-text3 {
+  display: flex;
+  flex-direction: row;
+}
+.location-text {
+  transform: translate(0px, 0px);
+  font-size: 9px;
+  color: #fff;
+  margin-top: 3px;
+}
+.phone-text {
+  transform: translate(0px, 0px);
+  color: #fff;
+  font-size: 9px;
+  margin-top: 3px;
+}
+.envelope-text {
+  transform: translate(0px, 0px);
+  color: #fff;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.arrow-text {
+  transform: translate(0px, 0px);
+  color: #fff;
+  font-size: 9px;
+  margin-top: 3px;
+}
+
+.info-box3 {
+  position: absolute;
+  top: 33%;
+  left: 52%;
+}
+.fa-location-dot3 {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid;
+  transform: scale(var(--ggs, 1));
+  border-radius: 50%;
+  margin-bottom: 4px;
+  padding: 3.05px;
+  font-size: 8px;
+  color: #2699b2;
+  margin-right: 6px;
+}
+.fa-phone3 {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid;
+  transform: scale(var(--ggs, 1));
+  border-radius: 50%;
+  margin-bottom: 4px;
+  padding: 3.05px;
+  font-size: 8px;
+  color: #2699b2;
+  margin-right: 6px;
+}
+
+.fa-envelope3 {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid;
+  transform: scale(var(--ggs, 1));
+  border-radius: 50%;
+  margin-bottom: 4px;
+  padding: 3.05px;
+  font-size: 8px;
+  color: #2699b2;
+  margin-right: 6px;
+}
+.fa-arrow-pointer3 {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid;
+  transform: scale(var(--ggs, 1));
+  border-radius: 50%;
+  margin-bottom: 4px;
+  padding: 3.05px;
+  font-size: 8px;
+  color: #2699b2;
+  margin-right: 6px;
+}
+.down-part-lorem223 {
+  transform: translate(0px, 0px);
+  font-size: 9px;
+  color: #fff;
+  margin-top: 3px;
+}
+.down-part-number23 {
+  transform: translate(0px, 0px);
+  font-size: 9px;
+  color: #fff;
+  margin-top: 3px;
+}
+.down-part-email23 {
+  transform: translate(0px, 0px);
+  font-size: 9px;
+  color: #fff;
+  margin-top: 3px;
+}
+.down-part-website23 {
+  transform: translate(0px, 0px);
+  font-size: 9px;
+  color: #fff;
+  margin-top: 3px;
+}
+.cardLogo {
+  width: 55px;
+}
+
+.cardHolderNameLastName {
+  display: flex;
+flex-wrap: wrap;
+  width: 40%;
+  text-align: center;
+  padding-left: 5px;
+  
+}
+
+.first-card-blog {
+  width: 400px !important;
+  position: relative;
+}
+.second-card-blog {
+  width: 400px !important;
+}
+.company-name-lorem-text-box3{
+  position: absolute;
+  top: 88%;
+  left: 32%;
+}

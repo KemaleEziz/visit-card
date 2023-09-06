@@ -1,0 +1,48 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100% !important;
+  /* padding-top: 20px; */
+  padding-bottom: 20px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.swiper-wripper {
+  transform: translate3d(0px, 0px, 0px) !important;
+}
+.text-general {
+  text-align: center;
+}
+.design-div {
+  text-align: center !important;
+}
+.swipperBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}

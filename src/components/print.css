@@ -1,0 +1,44 @@
+
+.print-content {
+    width: 400px;
+    height: 230px;
+    background-color: #ffffff; 
+    padding: 20px;
+  }
+  
+ 
+  @media print {
+    .print-content {
+      width: 400px;
+      height: 230px;
+      background-color: #ffffff;
+      padding: 20px;
+    }
+  }
+  /* style={className=css-fma1nv-MuiGrid-root} */
+  
+
+  .right-header{
+    text-align: center;
+  }
+  .print-buttons{
+    display: flex;
+    justify-content: space-between !important;
+    width: 300px;
+
+  }
+ .front-button{
+    color: "#fff";
+    background-color: "#c83e04" !important;
+    padding-block: "5px";
+    border: "none";
+    border-radius: "10px";
+    /* font-weight: "600"; */
+    /* z-index: 999; */
+    margin-bottom:'5px';
+
+ }
+  
+  
+  
+  

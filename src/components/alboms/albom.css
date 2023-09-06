@@ -1,0 +1,28 @@
+.alboms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.cards-box {
+  overflow: hidden;
+  width: 100%;
+}
+
+.css-11lq3yg-MuiGrid-root {
+  z-index: 999;
+}
+/* .css-1lym95h-MuiGrid-root {
+  display: flex;
+  flex-direction: column;
+} */
+.visaPageBox {
+  /* margin-top: 20px !important; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80% !important;
+  border: 1px solid red;
+  margin: auto !important;
+}

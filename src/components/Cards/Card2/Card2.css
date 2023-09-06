@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.first-card2 {
+  margin: auto;
+  background-size: cover;
+  width: 400px;
+  height: 230px;
+}
+
+.design-div {
+  transform: translate(0px, -200px);
+  white-space: initial;
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+}
+
+.logo-img {
+  width: 75px;
+}
+.company-name {
+  color: #e9e9e9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.slogan1 {
+  color: #e9e9e9;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.down-part-lorem2 {
+  color: #e9e9e9;
+  /* transform: translate(0px, -130px); */
+  text-align: center;
+  font-size: 11px;
+}
+
+.company-info {
+  padding: 30px;
+  transform: translate(0px, -240px);
+}
+
+.card-holder-name {
+  color: #e9e9e9;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.flex {
+  display: flex;
+  text-align: center;
+}
+
+.card-holder-surname {
+  color: gray;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.cofounder-p {
+  border-bottom: 2px solid #fff;
+  max-width: 120px;
+  color: #fff;
+  font-size: 9px;
+  text-align: center;
+}
+
+.cofounder-p::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid red;
+  margin-bottom: -2px;
+  max-width: 20px;
+  margin-top: 8px;
+}
+
+.second-card2 {
+  background-size: cover;
+  width: 400px;
+  height: 230px;
+  margin: auto;
+  text-align: left;
+}
+
+.card-first-card-logo-box {
+  width: 50px;
+  text-align: center;
+}
+.card-first-card-logo {
+  width: 50px;
+  margin-right: 10px;
+}
+.second-card-blog {
+  height: 230px;
+  position: relative;
+}
+
+.info-box2 {
+  position: absolute !important;
+  top: 58%;
+  left: 57%;
+  font-size: 9px;
+}
+
+.icon-text2 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.fa-location-dot {
+  transform: translate(-32px, 0px);
+}
+.fa-phone {
+  transform: translate(-41px, -2px);
+}
+.fa-envelope {
+  transform: translate(-54px, -2px);
+}
+.fa-arrow-pointer {
+  transform: translate(-64px, -3px);
+}
+
+.down-part-lorem22 {
+  transform: translate(0px, 0px);
+  font-size: 9px;
+  margin-bottom: 7px;
+}
+.down-part-number2 {
+  transform: translate(0px, 0px);
+  margin-bottom: 7px;
+}
+.down-part-email2 {
+  transform: translate(0px, 0px);
+  margin-bottom: 7px;
+}
+
+.down-part-website2 {
+  transform: translate(0px, 0px);
+}
+
+.first-card-blog{
+  width: 400px;
+  position: relative;
+}
+.second-card-blog{
+  width: 400px;
+}
+.company-name-lorem-text-box{
+  position: absolute;
+  top: 88%;
+  left: 39%;
+  color: #fff;
+}
