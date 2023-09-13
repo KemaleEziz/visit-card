@@ -1,5 +1,6 @@
+
 // let user = {
-//     id: 6,
+//     id: 18,
 //     firstName: "String",
 //     lastName: "Qasimov",
 //     middleName: "asadeeefff",
@@ -15,21 +16,19 @@
 
 
 
-export async function postDAta (data){
+
+export async function updateData (data){
     const requestOptions = {
-        method: 'POST',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     };
     const response = await fetch('http://card.somee.com/api/card', requestOptions);
-   const res = await response.json();
-   return res
+    const res = await response.json();
+    console.log("Update Apiden gelen data: ", res);
    
 }
 
-
-
 // updateData(user)
-
 
 

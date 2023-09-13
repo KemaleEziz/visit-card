@@ -26,17 +26,21 @@ import Card3 from "./components/Cards/Card3/Card3";
 import Alboms from "./components/alboms/alboms";
 import CardFirst from "./components/Cards/Card3/CardFirst.png";
 import CardSecond from "./components/Cards/Card3/CardSecond.png";
+import Update from "./pages/Update/Update";
 
 function App() {
   const [selectedCard, setSelectedCard] = useState(0);
   const [cardData, setCardData] = useState([]);
   const [fileDataURL, setFileDataURL] = useState(null);
-  const [fontSize, setFontSize] = useState();
+  const [fontSize, setFontSize] = useState(12);
   const [name, setName] = useState("");
   const [flexDirection, setFlexDirection] = useState();
   const [uploadFile, setUploadFile] = useState();
   const [chooseCard, setChooseCard] = useState(null);
   const [limitCardHolderName, setLimitCardHolderName] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [open, setOpen] = useState();
+
   const cards = [
     {
       firstCardContent: {
@@ -55,7 +59,7 @@ function App() {
         LogoBox: "card-first-card-logo-box",
         companyNameLoremTextBox: "company-name-lorem-text-box1",
         firstCardBlog: "first-card-blog",
-        companyNameSloganBox:'companyNameSloganBox',
+        companyNameSloganBox: "companyNameSloganBox",
       },
       secondCardContent: {
         secondCard: "second-card",
@@ -72,11 +76,11 @@ function App() {
         cardHolderNameText: `THOMAS`,
         cardHolderSurNameText: "SMITH",
         secondCardBlog: "second-card-blog",
-        firstCardDataBox:'firstCardDataBox',
-        nameLastNameBox:'nameLastNameBox',
-        companyNameLoremTextBox1:'company-name-lorem-text-box1',
-        cardHolderMiddleName:'cardHolderMiddleName',
-        cardHolderMiddleNameText:'middleName',
+        firstCardDataBox: "firstCardDataBox",
+        nameLastNameBox: "nameLastNameBox",
+        companyNameLoremTextBox1: "company-name-lorem-text-box1",
+        cardHolderMiddleName: "cardHolderMiddleName",
+        cardHolderMiddleNameText: "middleName",
       },
       addressText: [
         {
@@ -205,7 +209,7 @@ function App() {
         companyNameLorem: "lorem-text",
         companyNameLoremText: "Lorem Ipsum Dolor",
         cardLogo: "cardLogo",
-        companyNameLoremTextBox1:'company-name-lorem-text-box1',
+        companyNameLoremTextBox1: "company-name-lorem-text-box1",
       },
 
       secondCardContent: {
@@ -219,7 +223,7 @@ function App() {
         cardHolderOccupation: "project-manager",
         cardHolderOccupationText: "Project Manager",
         flexClassName: "flex",
-        cardHolderNameLastName:'cardHolderNameLastName'
+        cardHolderNameLastName: "cardHolderNameLastName",
       },
 
       addressText: [
@@ -287,7 +291,9 @@ function App() {
           setChooseCard,
           limitCardHolderName,
           setLimitCardHolderName,
-          
+          isEditing,
+          setIsEditing,
+          open, setOpen
         }}
       >
         <BrowserRouter>

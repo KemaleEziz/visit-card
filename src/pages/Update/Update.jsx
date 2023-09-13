@@ -8,8 +8,8 @@ import React, {
 //Assets
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import "./Form.css";
-import { Grid } from "@mui/material";
+import "./update.css";
+import { Dialog, Grid } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import { fields } from "../../components/constants";
 import MenuItem from "@mui/material/MenuItem";
@@ -23,12 +23,12 @@ import { useFormik } from "formik";
 import Print from "../../components/Print";
 import { validationSchema } from "../../validation/Validation";
 import { useNavigate } from "react-router-dom";
-import { postDAta } from "../../service/login/post";
 // import Carouselly from "../../components/Carouselly/Carouselly";
 import Carouselly2 from "../../components/Carouselly2/Carouselly2";
 import "animate.css";
+import { updateData } from "../../service/login/put";
 
-function Form() {
+function Update() {
   const {
     cardData,
     setCardData,
@@ -64,17 +64,17 @@ function Form() {
 
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      middleName: "",
-      companyName: "",
-      slogan: "",
-      description: "",
-      address: "",
-      phoneNumber: "",
-      email: "",
-      website: "",
-      title: "",
+      firstName: cardData?.firstName|| "",
+      lastName: cardData?.lastName || "",
+      middleName:cardData?.middleName || "",
+      companyName:cardData?.companyName ||"",
+      slogan: cardData?.slogan ||"",
+      description:cardData?.description ||"",
+      address:cardData?.address || "",
+      phoneNumber:cardData?.phoneNumber || "",
+      email: cardData?.email ||"",
+      website:cardData?.website || "",
+      title:cardData?.title || "",
     },
     validate(values) {
       const errors = {};
@@ -117,18 +117,27 @@ function Form() {
 
   const handleSend = async () => {
     let id = null;
-    await postDAta(formik?.values).then((data) => (id = data.id));
+    // await updateData(formik?.values).then((data) => (id = data.id));
+    const res = await updateData(formik?.values)
+    console.log(res)
+    handleDisplay(false)
   };
 
- 
+
+  const handleClose = () => {
+    handleDisplay(false);
+  };
+  const openDialogBox = () => {
+    handleDisplay(true);
+  };
   return (
     <div>
-       {/* <Grid  className="editButton">
-      <button //onClick={openDialogBox}
-     
+      <button onClick={openDialogBox}
+      className="editButton"
       >Edit Your card</button>
-      </Grid>  */}
-      
+      <Dialog onClose={handleClose} open={openDialog} 
+      //  className="dialog_box"
+       >
         <Grid container 
         className="updatePageBox"
         
@@ -145,15 +154,14 @@ function Form() {
             <Box
               onSubmit={formik.handleSubmit}
               component="form"
-              // sx={{
-              //   "& .MuiTextField-root": { m: 0, display: "block" },
-              // }}
+              sx={{
+                "& .MuiTextField-root": { m: 0, display: "block" },
+              }}
               noValidate
               autoComplete="off"
             >
               {fields.map((field, i) => (
                 <TextField
-                item xs={12} sm={6}
                 className="formTextField"
                   style={{
                     width: "100%",
@@ -188,7 +196,7 @@ function Form() {
                 type="submit"
                 variant="outlined"
                 sx={{
-                  width: "290px",
+                  width: "190px",
                   height: "35px",
                   color: "#995D81",
                   display: "block",
@@ -203,14 +211,14 @@ function Form() {
                   },
                 }}
               >
-                Generate Your Business card
+               Edit 
               </Button>
             </Box>
           </Grid>
         </Grid>
-      {/* </Dialog> */}
+      </Dialog>
     </div>
   );
 }
 
-export default Form;
+export default Update;

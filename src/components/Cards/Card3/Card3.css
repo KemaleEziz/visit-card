@@ -74,7 +74,7 @@
 .card-holder-namee {
   color: #2699b2;
   margin-right: 10px;
-  font-size: 11px;
+  /* font-size: 11px; */
   letter-spacing: 1px;
 }
 
@@ -83,13 +83,14 @@
   opacity: 0.5;
   font-size: 11px;
   letter-spacing: 1px;
+  margin-block: 5px;
 }
 
 .project-manager {
   color: #fff;
-  text-align: left;
-  font-size: 11px;
-  transform: translate(20px, 3px);
+  /* text-align: center; */
+  /* font-size: 10px; */
+  width: 171px;
 }
 /*  */
 /* .address-list {
@@ -201,7 +202,7 @@
 .info-box3 {
   position: absolute;
   top: 33%;
-  left: 52%;
+  left: 58%;
 }
 .fa-location-dot3 {
   box-sizing: border-box;
@@ -293,12 +294,12 @@
 }
 
 .cardHolderNameLastName {
-  display: flex;
-flex-wrap: wrap;
   width: 40%;
   text-align: center;
   padding-left: 5px;
-  
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .first-card-blog {
@@ -308,7 +309,7 @@ flex-wrap: wrap;
 .second-card-blog {
   width: 400px !important;
 }
-.company-name-lorem-text-box3{
+.company-name-lorem-text-box3 {
   position: absolute;
   top: 88%;
   left: 32%;

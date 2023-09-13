@@ -15,7 +15,12 @@ const Card2 = ({ card }) => {
     fileDataURL,
     setFileDataURL,
     uploadFile,
-    fontSize
+    fontSize,
+    setFlexDirection,
+    limitCardHolderName,
+    setLimitCardHolderName,
+    flexDirection
+    
   } = useContext(Store);
 
   const addressIconStyleList = [
@@ -25,7 +30,18 @@ const Card2 = ({ card }) => {
     { addressClass: "down-part-website2", iconClass: "fa-arrow-pointer" },
   ];
 
-  let index = 0;
+  if (cardData?.companyName?.length > 12) {
+    setFlexDirection(true);
+  }
+
+  if (cardData?.cardHolderName?.length > 10) {
+    setFlexDirection(true);
+  }
+
+  if (cardData?.firstName?.length > 8) {
+    setFlexDirection(true);
+  }
+ let index = 0
   return (
     <Grid
       className="cards"
@@ -103,15 +119,22 @@ const Card2 = ({ card }) => {
           alt=""
         />
         <div className="company-info">
-          <div className={card?.secondCardContent?.flexClassName}>
-            <h2 className={card?.secondCardContent?.cardHolderName}>
+          <div className={card?.secondCardContent?.flexClassName}
+              style={{ flexDirection: flexDirection ? "column" : "row" }} 
+          >
+
+            <h2 className={card?.secondCardContent?.cardHolderName}
+          //  style={{ flexDirection: flexDirection ? "column" : "row" }}
+            >
               {cardData.firstName
-                ? cardData.firstName
+                ? cardData.firstName.slice(0,17)
                 : card?.secondCardContent.cardHolderNameText}
             </h2>
-            <span className={card?.secondCardContent.cardHolderSurname}>
+            <span className={card?.secondCardContent.cardHolderSurname}
+            
+            >
               {cardData.lastName
-                ? cardData.lastName
+                ? cardData.lastName.slice(0,20)
                 : card?.secondCardContent.cardHolderSurnameText}
             </span>
           </div>
@@ -127,7 +150,7 @@ const Card2 = ({ card }) => {
               v.text != null && (
                 <div key={v.id}>
                   <div key={v.id} className="icon-text2">
-                    <div className={addressIconStyleList[index].iconClass}>
+                    <div className={addressIconStyleList[index]?.iconClass}>
                       {v?.icon}
                     </div>
                     <p className={addressIconStyleList[index].addressClass}>

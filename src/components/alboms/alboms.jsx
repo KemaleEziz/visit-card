@@ -1,4 +1,4 @@
- import { Box, Button, Grid, MenuItem, Select, TextField } from "@mui/material";
+import { Box, Button, Grid, MenuItem, Select, TextField } from "@mui/material";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Store from "../context/store";
 import Card1 from "../Cards/Card1/Card1";
@@ -11,9 +11,9 @@ import { useFormik } from "formik";
 import { validationSchema } from "../../validation/Validation";
 import { fields } from "../../components/constants";
 //import Carouselly from '../Carouselly/Carouselly';
-import Carouselly2 from '../Carouselly2/Carouselly2';
-
-const Alboms = () => {
+import Carouselly2 from "../Carouselly2/Carouselly2";
+import Update from '../../pages/Update/Update';
+const Alboms = ({openDialogBox}) => {
   const { state } = useLocation();
   const {
     cardData,
@@ -34,7 +34,9 @@ const Alboms = () => {
     setDisplay,
     setSlogan,
     chooseCard,
-
+    setChooseCard,
+    isEditing,
+    setIsEditing,
   } = useContext(Store);
   const frontComponentRef = useRef();
 
@@ -105,45 +107,59 @@ const Alboms = () => {
   };
 
   return (
-
     <Grid container item xs={11} md={6} className="visaPageBox">
-    <Grid className="print-header-box">
-      <Print
-      className="print-box"
-      ref={{ frontComponentRef }} />  
-  </Grid>
-      <Grid >
+      <Grid className="print-header-box">
+        <Print className="print-box" ref={{ frontComponentRef }} />
+      </Grid>
+      
+      <Grid>
+        <Update />
+          {/* Edit your information */}
+         <div>
+          {/* <Button
+            size="medium"
+            onClick={() =>
+              <Update />
+            }
+            variant="outlined"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "auto",
+              color: "black",
+              border: "1px solid black",
+             
+              // borderRadius: "10px",
+              fontWeight: "800",
+              // zIndex: 999,
+            }}
+          >
+            Edit your information
+          </Button> */}
+        </div> 
         <div>
-        {/* <Carouselly onImageClick={handleImageClick} /> */}
-        <Carouselly2 onImageClick={handleImageClick} />
-      {console.log(chooseCard)}
-      {chooseCard ==1 &&(
-        <div >
-          <Card1 card={cards[0]} cardData={cardData} />
+          {/* <Carouselly onImageClick={handleImageClick} /> */}
+          <Carouselly2 onImageClick={handleImageClick} />
+          {console.log(chooseCard)}
+          {chooseCard == 1 && (
+            <div>
+              <Card1 card={cards[0]} cardData={cardData} />
+            </div>
+          )}
+          {chooseCard == 2 && (
+            <div>
+              <Card2 card={cards[1]} cardData={cardData} />
+            </div>
+          )}
+          {chooseCard == 3 && (
+            <div>
+              <Card3 card3={cards[2]} cardData={cardData} />
+            </div>
+          )}
         </div>
-      )}
-      {chooseCard ==2 &&(
-        <div>
-          <Card2 card={cards[1]} cardData={cardData} />
-        </div>
-      )}
-      {chooseCard ==3 &&(
-        <div>
-          <Card3 card3={cards[2]} cardData={cardData} />
-        </div>
-      )}
-        </div>
-       
       </Grid>
     </Grid>
-    // <Box className="alboms"   >
-      // <Grid item xs={11} md={6} container className="right-box">
-     
-      // {/* <Grid className="upperVisaPageBox"> */}
-       
-      // </Grid>
-      // </Grid>
-    // </Box>
   );
 };
 

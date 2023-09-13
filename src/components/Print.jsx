@@ -78,13 +78,10 @@ const Print = forwardRef((cards, ref) => {
             }}
             style={{
               color: "black",
-              // background: "#c83e04",
-              // paddingBlock: "5px",
               border: "none",
               borderRadius: "10px",
-              // fontWeight: "600",
               zIndex: 999,
-              // marginBottom:'5px',
+              
             }}
           >
             Print Front
@@ -97,8 +94,6 @@ const Print = forwardRef((cards, ref) => {
             onClick={() => handlePrintBack()}
             style={{
               color: "black",
-              // background: "#c83e04",
-              // paddingBlock: "5px",
               border: "none",
               borderRadius: "10px",
               fontWeight: "500",

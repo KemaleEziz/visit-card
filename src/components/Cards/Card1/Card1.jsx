@@ -29,43 +29,50 @@ const VisitCard = ({ card, animateCard1 }) => {
     setFlexDirection(true);
   }
 
-  if (card.secondCardContent.cardHolderNameText.length > 8) {
-    setLimitCardHolderName(true);
+  if (cardData?.firstName?.length > 12) {
+    setFlexDirection(true);
   }
+  if (cardData?.slogan?.length > 12) {
+    setFlexDirection(true);
+  }
+
+  // if (card.secondCardContent.cardHolderNameBox.length > 8) {
+  //   setLimitCardHolderName(true);
+  // }
+  // if (card?.firstCardContent?.description.length > 8) {
+  //   setLimitCardHolderName(true);
+  // }
 
   return (
     <Grid
+      xs={11}
+      md={6}
       className="cards"
       columns={{ xs: 1, sm: 2 }}
       container
       justifyContent="center"
     >
-   
-      <Grid item className={card.firstCardContent?.firstCardBlog}>
+      <Grid className={card.firstCardContent.firstCardBlog}
+       xs={11}
+       md={6}
+      >
         <img
-          src={card.firstCardContent?.backGroundImage}
-          className={card.firstCardContent?.firstCard}
+          src={card.firstCardContent.backGroundImage}
+          className={card.firstCardContent.firstCard}
         />
         <div
-          // style={
-          //   cardData.cardDesign?.length > "220px"
-          //     ? { fontSize: "6px" } &&  { flexDirection: "column" }
-          //     : { flexDirection: flexDirection ? "column" : "row" }
-          // }
           className={card.firstCardContent.cardDesign}
           style={{ flexDirection: flexDirection ? "column" : "row" }}
         >
           <div className={card.firstCardContent.LogoBox}>
             {uploadFile ? (
               <img
-              
                 className={card.firstCardContent.cardLogo}
                 src={URL.createObjectURL(uploadFile)}
                 alt=""
               />
             ) : (
               <img
-                
                 className={card.firstCardContent.cardLogo}
                 src={Logo}
                 alt=""
@@ -74,54 +81,44 @@ const VisitCard = ({ card, animateCard1 }) => {
           </div>
           <div>
             <div className={card.firstCardContent.companyName}>
-              <div>
-                <h2
-                  style={
-                    cardData.companyName?.length > 12
-                      ? { fontSize: "11px" }
-                      : cardData.companyName?.length > 25
-                      ? { fontSize: "7px" }
-                      : { fontSize: fontSize + "px" }
-                  }
-
-                  // ?{fontSize:"13px",flexDirection:'column'}
-                  // :{cardData.companyName?.length >= 25
-                  // ?{fontSize:"10px"}
-                  // :{fontSize:fontSize+'px'}}
-                >
-                  {cardData.companyName}
-                  {cardData.companyName
-                    ? cardData.companyName
-                    : card.firstCardContent.companyNameText}
-                </h2>
-              </div>
-
-              <div className={card.firstCardContent.companyNameSloganBox}>
-                <p
-                  className={card.firstCardContent.companyNameSlogan}
-                  style={
-                    cardData.companyNameSlogan?.length > 12
-                      ? { fontSize: "22px" }
-                      : { fontSize: fontSize + "px" }
-                  }
-                >
-                  {cardData?.slogan
-                    ? cardData?.slogan
-                    : cardData.slogan?.length == 0
-                    ? ""
-                    : card.firstCardContent.companyNameSloganText}
-                </p>
-              </div>
+              <h2
+                style={
+                  cardData.companyName?.length > 12 
+                    ? { fontSize: "13px" }
+                    : { fontSize: fontSize + "px" } &&
+                      cardData.companyName?.length > 20
+                    ? { fontSize: "8px" }
+                    : { fontSize: fontSize + "px" }
+                }
+              >
+                {cardData.companyName
+                  ? cardData.companyName
+                  : card.firstCardContent.companyNameText}
+              </h2>
+              <p
+                className={card.firstCardContent.companyNameSlogan}
+                style={
+                  cardData.slogan?.length > 12
+                    ? { fontSize: "8px" }
+                    : { fontSize: fontSize + "px" }
+                }
+              >
+                {cardData.slogan
+                  ? cardData.slogan
+                  : cardData.slogan?.length == 0
+                  ? ""
+                  : card.firstCardContent.companyNameSloganText}
+              </p>
             </div>
           </div>
         </div>
-
-        <div className={card.firstCardContent.companyNameLoremTextBox}>
+        {/* </div> */}
+        <div className={card.firstCardContent.companyNameLoremText}>
           <p
-            className={card.firstCardContent.companyNameLoremText}
+            // className={card.firstCardContent.companyNameLoremText}
             style={
-              cardData.companyNameLoremText?.length > 12
-                ? { fontSize: "4px" }
+              cardData.description?.length > 22
+                ? { fontSize: "8px" }
                 : { fontSize: fontSize + "px" }
             }
           >
@@ -135,7 +132,10 @@ const VisitCard = ({ card, animateCard1 }) => {
       </Grid>
 
       {/* second card */}
-      <Grid item className={card.secondCardContent.secondCardBlog}>
+      <Grid item className={card.secondCardContent.secondCardBlog}
+       xs={11}
+       md={6}
+      >
         <img
           src={card.secondCardContent.backGroundImage}
           className={card.secondCardContent.secondCard}
@@ -163,53 +163,109 @@ const VisitCard = ({ card, animateCard1 }) => {
               );
             })}
           </div>
-          <div
-            className={card.secondCardContent.cardHolderNameBox}
-            style={{
-              flexDirection: limitCardHolderName ? "column" : "row",
-            }}
-          >
-            <div className={card.secondCardContent.nameLastNameBox}>
+          <div className={card.secondCardContent.cardHolderNameBox}>
+            <div
+              className={card.secondCardContent.nameLastNameBox}
+              style={{
+                flexDirection:
+                  cardData.firstName && cardData.firstName?.length > 11
+                    ? "column"
+                    : "row",
+                //  ||  cardData.firstName?.length < 14
+                // ? { fontSize: "1px" }
+                // : { fontSize: fontSize + "px" }
+
+                // &&  cardData.firstName?.length > 14
+                // ? { fontSize: "2px" }
+                // : { fontSize: fontSize + "px" }
+              }}
+            >
               <p
                 className={card.secondCardContent.cardHolderName}
-                style={{ flexDirection: flexDirection ? "column" : "row" }}
+                style={
+                  cardData.firstName?.length < 14
+                    ? { fontSize: "11px" }
+                    : { fontSize: fontSize + "px" } ||
+                      cardData.firstName.length > 14
+                    ? { fontSize: "11px" }
+                    : { fontSize: fontSize + "px" }
+                }
               >
                 {cardData.firstName
                   ? cardData.firstName
-                  : cardData.firstName?.length > 10
-                  ? ""
                   : card.secondCardContent.cardHolderNameText}
               </p>
-              <b>
-                {" "}
-                <span className={card.secondCardContent.cardHolderSurNameText}>
-                  {cardData.lastName
-                    ? cardData.lastName
-                    : card.secondCardContent.cardHolderSurNameText}
-                </span>
-              </b>
-              <p className={card.secondCardContent.cardHolderMiddleName}>
-              {cardData.middleName
+
+              <span
+                className={card.secondCardContent.cardHolderSurNameText}
+                style={
+                  cardData.lastName?.length < 14
+                    ? { fontSize: "11px", fontWeight: 700 }
+                    : { fontSize: fontSize + "px" } &&
+                      cardData.lastName?.length > 14
+                    ? { fontSize: "11px", fontWeight: 700, display: "block" }
+                    : { fontSize: fontSize + "px" }
+                }
+              >
+                {cardData.lastName
+                  ? cardData.lastName
+                  : card.secondCardContent.cardHolderSurNameText}
+              </span>
+            </div>
+
+            {/* </b> */}
+            {/* <p className={card.secondCardContent.cardHolderMiddleName}
+               style={
+                cardData. middleName?.length < 14
+                  ? { fontSize: "13px" }
+                  : { fontSize: fontSize + "px" }
+
+                  ||  cardData. middleName?.length > 14
+                  ? { fontSize: "9px" }
+                  : { fontSize: fontSize + "px" }
+
+              }
+              >
+                {cardData.middleName
                   ? cardData.middleName
                   : cardData.middleName?.length > 10
                   ? ""
                   : card.secondCardContent.cardHolderMiddleNameText}
-              </p>
-              <p
-                className={card.secondCardContent.cardHolderOccupation}
-
-                //  style={{
-                //   cardData.cardHolderOccupation .length > 10
-                //   ? {fontSize :'1px'}
-                //   : {fontSize: fontSize + 'px'}
-                // }}
-              >
-                {cardData.title
-                  ? cardData.title
-                  : card.secondCardContent.cardHolderOccupationDescription}
-              </p>
-            </div>
+              </p> */}
+            <p
+              className={card.secondCardContent.cardHolderMiddleName}
+              style={
+                cardData.middleName?.length < 14
+                  ? { fontSize: "13px" }
+                  : { fontSize: fontSize + "px" } ||
+                    cardData.middleName?.length > 14
+                  ? { fontSize: "9px" }
+                  : { fontSize: fontSize + "px" }
+              }
+            >
+              {cardData.middleName
+                ? cardData.middleName
+                : cardData.middleName?.length > 10
+                ? ""
+                : card.secondCardContent.cardHolderMiddleNameText}
+            </p>
+            <p
+              className={card.secondCardContent.cardHolderOccupation}
+              style={
+                cardData.title?.length < 19
+                  ? { fontSize: "10px" }
+                  : { fontSize: fontSize + "px" } || cardData.title?.length > 19
+                  ? { fontSize: "7px" }
+                  : { fontSize: fontSize + "px" }
+              }
+            >
+              {cardData.title
+                ? cardData.title
+                : card.secondCardContent.cardHolderOccupationDescription}
+            </p>
           </div>
+
+          {/* </div> */}
         </div>
       </Grid>
     </Grid>

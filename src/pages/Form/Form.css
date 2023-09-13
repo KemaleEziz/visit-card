@@ -91,6 +91,14 @@
   padding-top: 3px !important;
 }
 
-.css-v4u5dn-MuiInputBase-root-MuiInput-root {
+/* .css-v4u5dn-MuiInputBase-root-MuiInput-root {
   width: 60%;
-}
+} */
+
+ .editButton{
+  width: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
